@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply font-sans bg-navy-950 text-navy-100 antialiased selection:bg-gold/30 selection:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 text-gold-light border border-gold/40 font-sans font-semibold px-6 py-3 rounded-xl hover:border-gold hover:shadow-lg hover:shadow-gold/15 active:scale-95 transition-all duration-200;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-dark via-brand to-gold text-navy-950 font-sans font-bold px-6 py-3 rounded-xl hover:brightness-110 active:scale-95 transition-all duration-200 shadow-md hover:shadow-gold/30;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-gold/40 text-gold-light font-sans font-medium px-6 py-3 rounded-xl hover:bg-gold/10 hover:border-gold active:scale-95 transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 text-navy-300 font-sans font-medium px-4 py-2 rounded-xl hover:bg-white/5 hover:text-white active:scale-95 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-navy-900/80 backdrop-blur-md rounded-2xl shadow-xl border border-navy-700/60 hover:border-gold/40 transition-all duration-300 overflow-hidden text-navy-100;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl text-white font-serif leading-tight tracking-tight;
+  }
+
+  .section-sub {
+    @apply text-navy-300 font-sans text-base md:text-lg leading-relaxed;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+
+  .tag-verified {
+    @apply tag bg-emerald-950/80 text-emerald-300 border border-emerald-500/40;
+  }
+
+  .tag-new {
+    @apply tag bg-blue-950/80 text-blue-300 border border-blue-500/40;
+  }
+
+  .tag-ready {
+    @apply tag bg-gold/15 text-gold-light border border-gold/40;
+  }
+
+  .tag-hot {
+    @apply tag bg-rose-950/80 text-rose-300 border border-rose-500/40;
+  }
+
+  .tag-budget {
+    @apply tag bg-amber-950/80 text-amber-300 border border-amber-500/40;
+  }
+
+  .tag-premium {
+    @apply tag bg-purple-950/80 text-purple-300 border border-purple-500/40;
+  }
+
+  .input-field {
+    @apply w-full bg-navy-900/90 border border-navy-700/80 rounded-xl px-4 py-3 text-white placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold transition-all duration-200 font-sans text-sm;
+    min-height: 3rem;
+  }
+
+  .btn-primary,
+  .btn-gold,
+  .btn-outline {
+    @apply touch-manipulation;
+    min-height: 3rem;
+  }
+
+  .skeleton {
+    @apply bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 animate-shimmer bg-[length:1000px_100%];
+  }
+
+  .nav-link {
+    @apply text-navy-300 hover:text-gold font-medium text-sm transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  border-radius: 1rem;
+  font-family: "DM Sans", sans-serif;
+  min-height: 320px;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0A1128 !important;
+  color: #E2E8F5 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: #0A1128 !important;
+}
+
+/* Custom royal dark scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #050814;
+}
+::-webkit-scrollbar-thumb {
+  background: #1D2B56;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 4px;
+  background: #1D2B56;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #D4AF37;
+  cursor: pointer;
+  border: 2px solid #050814;
+  box-shadow: 0 0 0 2px #D4AF37;
+}

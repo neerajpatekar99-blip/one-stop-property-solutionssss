@@ -1,0 +1,22 @@
+# Robots.txt for One Stop Property Solutions
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://onestoppropertysolution.in/sitemap.xml
+Sitemap: https://onestoppropertysolution.in/sitemap-0.xml
+Sitemap: https://onestoppropertysolution.in/sitemap-1.xml
